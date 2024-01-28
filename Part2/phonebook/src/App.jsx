@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import Search from './Components/Search'
 import Phonebook from './Components/Phonebook'
 import personService from './Services/persons'
+import Notification from './Components/Notification'
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
   const [search, setSearch] = useState('')
+  const [newUserMessage, setNewUserMessage] = useState('New user message appears here')
   
   const handleNewName = (event) => {
     console.log(event.target.value)
@@ -59,6 +61,12 @@ const App = () => {
     }
     console.log('button clicked', event.target)
     console.log('number:', PersonObject.number)
+    setNewUserMessage(
+      `Added ${PersonObject.name}`
+    )
+    setTimeout(() => {
+      setNewUserMessage(null)
+    }, 5000)
     checkName(PersonObject)
   }
 
@@ -83,6 +91,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={newUserMessage} />
       <Search search={search} handleSearch={handleSearch}/>
       <form onSubmit={addPerson}>
         <div>
