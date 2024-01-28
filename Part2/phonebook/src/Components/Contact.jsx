@@ -1,6 +1,6 @@
-const Contact = ({ name, number }) => {
+const Contact = ({ person, name, number, handleDelete }) => {
     return (
-    <p key={name}>{name} {number}</p>
+    <p>{name} {number} <button onClick={() => handleDelete(person.id)}>delete</button></p>
     )}
 
 export default Contact
