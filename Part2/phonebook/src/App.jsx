@@ -39,6 +39,17 @@ const App = () => {
         .then(returnedPerson => {
           setPersons(persons.map(person => person.id !== id ? person : returnedPerson))
         })
+        .catch(error => {
+          setNewUserMessage(
+            `${PersonObject.name} was already removed from server`
+          )
+          setPersons(persons.filter(person => person.id !== id))
+          setNewName('')
+          setNewNumber('')
+        })
+      setNewUserMessage(
+        `${PersonObject.name} was edited`
+      )
       setNewName('')
       setNewNumber('')
     }
@@ -48,6 +59,9 @@ const App = () => {
         .then(returnedPerson => {
           setPersons(persons.concat(returnedPerson))
         })
+      setNewUserMessage(
+        `Added ${PersonObject.name}`
+      )
       setNewName('')
       setNewNumber('')
     }
@@ -61,13 +75,10 @@ const App = () => {
     }
     console.log('button clicked', event.target)
     console.log('number:', PersonObject.number)
-    setNewUserMessage(
-      `Added ${PersonObject.name}`
-    )
+    checkName(PersonObject)
     setTimeout(() => {
       setNewUserMessage(null)
     }, 5000)
-    checkName(PersonObject)
   }
 
   const handleDelete = (id) => {
