@@ -1,0 +1,16 @@
+POST http://localhost:3001/api/notes
+Content-type: application/json
+
+{
+    "content": "Postman is cool",
+    "important":"true"
+}
+
+###
+POST http://localhost:3001/api/notes
+Content-type: application/json
+
+{
+    "content": "Other test",
+    "important":"true"
+}
