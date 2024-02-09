@@ -6,8 +6,6 @@ if (process.argv.length<3) {
 }
 
 const password = process.argv[2]
-// username: kennec31
-// password: isA4ed4X9f16Kjzx
 
 const url =
 `mongodb+srv://kennec31:${password}@cluster0.pzrxfqo.mongodb.net/noteApp?retryWrites=true&w=majority`
