@@ -21,8 +21,8 @@ const noteSchema = new mongoose.Schema({
 const Note = mongoose.model('Note', noteSchema)
 
 // const note = new Note({
-//   content: 'HTML is Easy',
-//   important: true,
+//     content: "Another note about MongoDB",
+//     important: false
 // })
 
 // note.save().then(result => {
