@@ -1,10 +1,10 @@
 import express from 'express';
 import { calculator, Operation } from './calculator';
 
-app.use(express.json());
-
 // const express = require('express');
 const app = express();
+
+app.use(express.json());
 
 app.get('/ping', (_req, res) => {
     res.send('pong');
