@@ -1,0 +1,2 @@
+14/2: Part 9: Up to Section B: Type narrowing
+18/2: Up to exercise 9.6 (come back when I know ESLint)
